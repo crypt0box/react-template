@@ -23,9 +23,17 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint:js": "eslint . --ext .js,.ts,.jsx,.tsx --fix",
-    "lint:prettier": "prettier --write .",
-    "lint": "yarn lint:js && yarn lint:style && yarn lint:prettier"
+    "lint:js": "eslint . --ext \".js,.ts,.jsx,.tsx\" --ignore-path .gitignore .",
+    "lint:style": "stylelint \"src/**/*.+(css|ts|tsx)\" --ignore-path .gitignore .",
+    "lint:prettier": "prettier --check .",
+    "lint": "yarn lint:js && yarn lint:style && yarn lint:prettier",
+    "lintfix": "prettier --write --list-different . && yarn lint:js -- --fix && yarn lint:style -- --fix",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": "eslint --cache",
+    "*.{css,scss,sass,html}": "stylelint",
+    "*.**": "prettier --check --ignore-unknown"
   },
   "eslintConfig": {
     "extends": [
@@ -52,6 +60,8 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
     "prettier": "^2.6.0",
     "stylelint": "^14.6.0",
     "stylelint-config-prettier": "^9.0.3",
