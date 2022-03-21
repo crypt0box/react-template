@@ -1,9 +1,11 @@
-import React from 'react';
+import React from 'react'
+import { Test } from './test'
 
 function App() {
   return (
     <div className="App">
       <button>button</button>
+      <Test />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -19,7 +21,7 @@ function App() {
         </a>
       </header> */}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
