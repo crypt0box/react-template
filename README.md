@@ -6,6 +6,22 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+## Environment
+
+| Module           | Version |
+| :--------------- | :------ |
+| Node             | 16.14.0 |
+| React            | 17.0.2  |
+| react-router-dom | 6       |
+| TypeScript       | 4.6.2   |
+
+## Build Setup
+
+```bash
+$ yarn install
+$ yarn start
+```
+
 ### `yarn start`
 
 Runs the app in the development mode.\
